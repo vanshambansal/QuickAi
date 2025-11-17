@@ -2,23 +2,44 @@ import React from "react";
 
 const FeedbackForm = ({ onClose }) => {
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value.trim();
-    const feedback = e.target.feedback.value.trim();
-    const rating = e.target.rating.value;
-    let errorMsg = "";
-    if (!email) errorMsg += "Email is required.\n";
-    else if (!/\S+@\S+\.\S+/.test(email)) errorMsg += "Please enter a valid email.\n";
-    if (!feedback) errorMsg += "Feedback is required.\n";
-    if (!rating) errorMsg += "Rating is required.\n";
-    if (errorMsg) {
-      alert(errorMsg);
-      return;
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const email = e.target.email.value.trim();
+  const feedback = e.target.feedback.value.trim();
+  const rating = e.target.rating.value;
+
+  let errorMsg = "";
+  if (!email) errorMsg += "Email is required.\n";
+  else if (!/\S+@\S+\.\S+/.test(email)) errorMsg += "Please enter a valid email.\n";
+  if (!feedback) errorMsg += "Feedback is required.\n";
+  if (!rating) errorMsg += "Rating is required.\n";
+
+  if (errorMsg) {
+    alert(errorMsg);
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:3000/feedbacks", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, feedback, rating }),
+    });
+
+    if (response.ok) {
+      alert("Thank you for your feedback!");
+      e.target.reset(); 
+      if (onClose) onClose();
+    } else {
+      alert("Something went wrong while submitting feedback.");
     }
-    alert("Thank you for your feedback!");
-    if (onClose) onClose();
-  };
+  } catch (error) {
+    console.error("Error submitting feedback:", error);
+    alert("Server error. Please try again later.");
+  }
+};
+
 
   const containerStyle = {
     position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,

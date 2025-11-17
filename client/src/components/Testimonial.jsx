@@ -1,7 +1,7 @@
 import { assets } from "../assets/assets"
 import image1 from "../assets/image1.png"
-import image2 from "../assets/image2.png"
 import image from "../assets/image.png"
+import image3 from "../assets/image3.png"
 const Testimonial = () => {
     const dummyTestimonialData = [
         {
@@ -12,14 +12,14 @@ const Testimonial = () => {
             rating: 4,
         },
         {
-            image: image2,
+            image: image,
             name: 'Yashdeep Jindal',
             title: 'Content Creator, TechCorp',
             content: 'ContentAI has made our content creation process effortless. The AI tools have helped us produce high-quality content faster than ever before.',
             rating: 5,
         },
         {
-            image: image,
+            image: image3,
             name: 'OM Kanchi',
             title: 'Content Writer, TechCorp',
             content: 'ContentAI has transformed our content creation process. The AI tools have helped us produce high-quality content faster than ever before.',

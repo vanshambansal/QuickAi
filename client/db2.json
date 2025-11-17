@@ -1,0 +1,34 @@
+{
+  "feedbacks": [
+    {
+      "id": "04ee",
+      "email": "vanshambansal1210@gmail.com",
+      "feedback": "hi this is very good website",
+      "rating": "2"
+    },
+    {
+      "id": "a95d",
+      "email": "SHIVIBANSAL686@GMAIL.COM",
+      "feedback": "i think they can imporve on their ui",
+      "rating": "5"
+    },
+    {
+      "id": "0bdd",
+      "email": "vansham@gmail.com",
+      "feedback": "hi this is nice website",
+      "rating": "3"
+    },
+    {
+      "id": "81ee",
+      "email": "SHIVIBANSAL1234@GMAIL.COM",
+      "feedback": "awesome",
+      "rating": "3"
+    },
+    {
+      "id": "6347",
+      "email": "SHIVIBANSAL686@GMAIL.COM",
+      "feedback": "kkdy",
+      "rating": "2"
+    }
+  ]
+}

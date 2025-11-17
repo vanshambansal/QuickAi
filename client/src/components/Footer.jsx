@@ -4,6 +4,31 @@ import FeedbackForm from './FeedbackForm';
 
 const Footer = () => {
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = async () => {
+    if (!email.trim()) {
+      alert("Please enter your email!");
+      return;
+    }
+
+    try {
+      await fetch("http://localhost:4000/subscribers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      alert("Subscribed successfully!");
+      setEmail("");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    }
+  };
+
 
   return (
     <footer className="px-6 md:px-16 lg:px-24 xl:px-32 pt-8 w-full text-gray-500">
@@ -38,12 +63,23 @@ const Footer = () => {
             <div className="text-sm space-y-2">
               <p>The latest news, articles, and resources, sent to your inbox weekly.</p>
               <div className="flex items-center gap-2 pt-4">
+
                 <input
                   className="border border-gray-500/30 placeholder-gray-500 focus:ring-2 ring-indigo-600 outline-none w-full max-w-64 h-9 rounded px-2"
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
-                <button className="bg-primary w-24 h-9 text-white rounded cursor-pointer">Subscribe</button>
+                <button
+                  onClick={handleSubscribe}
+                  className="bg-primary w-24 h-9 text-white rounded cursor-pointer"
+                >
+                  Subscribe
+                </button>
+
+
+
               </div>
             </div>
           </div>
