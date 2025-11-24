@@ -211,7 +211,7 @@ const Hero = () => {
                         </span>
                         <br />
                         <span className='animate-fade-in-up animation-delay-200 inline-block'>
-                            with{' '}
+                            with&nbsp;
                         </span>
                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400 animate-gradient-text inline-block'>
                             AI tools
