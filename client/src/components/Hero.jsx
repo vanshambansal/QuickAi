@@ -234,9 +234,16 @@ const Hero = () => {
                     <span className='relative z-10'>Start creating now</span>
                 </button>
 
-                <button className='bg-white/10 backdrop-blur-md px-10 py-3 rounded-lg border border-white/30 text-white font-medium hover:scale-105 hover:border-cyan-400/50 hover:bg-white/20 active:scale-95 transition-all duration-300 cursor-pointer'>
-                    Watch demo
-                </button>
+                <a
+                    href="https://www.youtube.com/watch?v=3XiQIy1rMHE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <button className='bg-white/10 backdrop-blur-md px-10 py-3 rounded-lg border border-white/30 text-white font-medium hover:scale-105 hover:border-cyan-400/50 hover:bg-white/20 active:scale-95 transition-all duration-300 cursor-pointer'>
+                        Watch demo
+                    </button>
+                </a>
+
             </div>
 
             {/* Stats */}
