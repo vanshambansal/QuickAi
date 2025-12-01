@@ -13,7 +13,7 @@ const Footer = () => {
     }
 
     try {
-      await fetch("http://localhost:4000/subscribers", {
+      await fetch("http://localhost:3001/subscribers", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

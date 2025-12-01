@@ -21,7 +21,7 @@ const FeedbackForm = ({ onClose }) => {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/feedbacks", {
+    const response = await fetch("http://localhost:3002/feedbacks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, feedback, rating }),

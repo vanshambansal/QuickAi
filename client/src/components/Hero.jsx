@@ -235,7 +235,7 @@ const Hero = () => {
                 </button>
 
                 <a
-                    href="https://www.youtube.com/watch?v=3XiQIy1rMHE"
+                    href="https://www.youtube.com/watch?v=ndNt3dYDfKM"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
